@@ -12,7 +12,7 @@ void Insert(int arr[],int n)
     {
         arr1[i]=arr[i];
     }
-    cout<<sizeof(arr1);
+   
 
     for(int i=n;i<n+ans;i++)
     {
@@ -24,6 +24,11 @@ void Insert(int arr[],int n)
     }
       
     
+}
+void Delete(){
+    int n;
+    cout<<"enter potition you want to delete element:";
+    cin>>n;
 }
 
 int main(){
@@ -42,6 +47,14 @@ int main(){
     if(ans=="yes")
     {
        Insert(arr,n);
+    }
+
+    cout<<"Do you want to delete element:";
+    string ans1;
+    cin>>ans1;
+    if(ans=="yes")
+    {
+        Delete();
     }
 return 0;
 }
