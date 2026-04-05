@@ -1,60 +1,80 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-void Insert(int arr[],int n)
+class A
 {
-    int ans;
-    cout<<"How many elements you want two add=";
-    cin>>ans;
-    int x=ans+n;
-      int *arr1=new int[x];
-      for(int i=0;i<n;i++)
+public:
+    int* Insert(int arr[], int &n)
     {
-        arr1[i]=arr[i];
-    }
-   
+        cout<<"enter total number of element that you want to add:";
+        int add;
+        cin >> add;
 
-    for(int i=n;i<n+ans;i++)
-    {
-        cin>>arr1[i];
-    }
-    for(int i=0;i<n+ans;i++)
-    {
-        cout<<arr1[i];
-    }
-      
-    
-}
-void Delete(){
-    int n;
-    cout<<"enter potition you want to delete element:";
-    cin>>n;
-}
+        int *arr1 = new int[n + add];
 
-int main(){
-    int n;
-    cout<<"enter the total number of element:";
-    cin>>n;
-    int *arr=new int[n];
-    cout<<"enter elements:";
-    for(int i=0;i<n;i++)
-    {
-        cin>>arr[i];
+        for (int i = 0; i < n; i++)
+        {
+            arr1[i] = arr[i];
+        }
+
+        for (int i = n; i < n + add; i++)
+        {
+            cin >> arr1[i];
+        }
+
+        n = n + add;
+        return arr1;
     }
-    cout<<"Do you want to insert an element:";
+
+    void Delete(int arr[], int &n)
+    {
+        cout<<"enter position:";
+        int pos;
+        cin >> pos;
+
+        for (int i = pos; i < n - 1; i++)
+        {
+            arr[i] = arr[i + 1];
+        }
+
+        n--;
+    }
+};
+
+int main()
+{
+    A a;
+    int n;
+    cout<<"enter the size of arry:";
+    cin >> n;
+
+    int *arr = new int[n];
+cout<<"enter elemnets:\n";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> arr[i];
+    }
+cout<<"do you want enter element:";
     string ans;
-    cin>>ans;
-    if(ans=="yes")
+    cin >> ans;
+
+    if (ans == "yes")
     {
-       Insert(arr,n);
+        arr = a.Insert(arr, n);
+    }
+cout<<"do you want delete element:";
+    string ans1;
+    cin >> ans1;
+
+    if (ans1 == "yes")
+    {
+        a.Delete(arr, n);
+    }
+    cout<<"final arry:";
+    for (int i = 0; i < n; i++)
+    {
+        cout << arr[i] << " ";
     }
 
-    cout<<"Do you want to delete element:";
-    string ans1;
-    cin>>ans1;
-    if(ans=="yes")
-    {
-        Delete();
-    }
-return 0;
+    return 0;
 }
