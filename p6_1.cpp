@@ -60,6 +60,6 @@ int main(){
     {
         cout << vec[i].calculate() << endl;
     }
-
+cout<<"\n25cs025";
     return 0;
 }
