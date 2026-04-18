@@ -1,5 +1,6 @@
 #include<iostream>
 #include<vector>
+#include<queue>
 using namespace std;
 class fehrenhit;
 class celsius{
@@ -54,15 +55,19 @@ bool operator==(celsius c, fehrenhit f)
 int main()
 {
     celsius c1(1);
-    cout<<c1.convert_f()<<endl;
+    cout<<"convert into fehrnhit="<<c1.convert_f()<<endl;
 
     fehrenhit f1(33.8);
-    cout<<f1.convert_c()<<endl;
+    cout<<"convert into celsius="<<f1.convert_c()<<endl;
 
-    fehrenhit f2(33.8);
+    fehrenhit f2(3);
     celsius c2(1);
     int ans=(c1==f1);
     int ans1=(c2==f2);
-    cout<<ans<<endl;
-     cout<<ans1<<endl;
+    cout<<"c1==f1:"<<ans<<endl;
+     cout<<"c2==f2:"<<ans1<<endl;
+     
+
+     cout<<"\n25cs025";
+
 }

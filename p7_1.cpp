@@ -21,9 +21,10 @@ class A
 int main()
 {
     A a;
-    a.add(2, 3);
-    a.add(2.2f,3.2f);
-    a.add(3,2.3f);
+    cout<<a.add(2, 3)<<endl;
+    cout<<a.add(2.2f,3.2f)<<endl;
+    cout<<a.add(3,2.3f);
+    cout<<"\n25cs025";
 
     return 0;
 }
