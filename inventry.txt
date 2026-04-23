@@ -1,0 +1,4 @@
+name     quantity          price
+rice                12                    20
+chawal                34                    40
+rajama                4                    50
